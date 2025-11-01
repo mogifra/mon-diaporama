@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Photo Slideshow Creator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Ken Burns Effects Animations */
+    @keyframes zoom-in {
+      from { transform: scale(1); }
+      to { transform: scale(1.15); }
+    }
+    @keyframes zoom-out {
+      from { transform: scale(1.15); }
+      to { transform: scale(1); }
+    }
+    @keyframes pan-left {
+      from { transform: translate(5%, 0) scale(1.15); }
+      to { transform: translate(-5%, 0) scale(1.15); }
+    }
+    @keyframes pan-right {
+      from { transform: translate(-5%, 0) scale(1.15); }
+      to { transform: translate(5%, 0) scale(1.15); }
+    }
+    @keyframes pan-up {
+      from { transform: translate(0, 5%) scale(1.15); }
+      to { transform: translate(0, -5%) scale(1.15); }
+    }
+    @keyframes pan-down {
+      from { transform: translate(0, -5%) scale(1.15); }
+      to { transform: translate(0, 5%) scale(1.15); }
+    }
+    @keyframes rotate {
+      from { transform: scale(1.2) rotate(-1deg); }
+      to { transform: scale(1.2) rotate(1deg); }
+    }
+    .animate-zoom-in { animation: zoom-in linear forwards; }
+    .animate-zoom-out { animation: zoom-out linear forwards; }
+    .animate-pan-left { animation: pan-left linear forwards; }
+    .animate-pan-right { animation: pan-right linear forwards; }
+    .animate-pan-up { animation: pan-up linear forwards; }
+    .animate-pan-down { animation: pan-down linear forwards; }
+    .animate-rotate { animation: rotate linear forwards; }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.28.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-gray-900 text-white">
+  <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
